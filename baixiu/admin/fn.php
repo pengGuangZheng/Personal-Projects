@@ -28,4 +28,10 @@ function itcast_nonquery( $sql ) {
     return $isTrue;
 }
 
+
+
+
+
+
+
 ?>
