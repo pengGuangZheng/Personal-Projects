@@ -1,6 +1,6 @@
 <?php
 
-require_once "./config.php";
+require_once "./apiconfig.php";
 
 // 查询语句, 返回一个 二维数组
 function itcast_query ( $sql ) {

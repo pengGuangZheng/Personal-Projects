@@ -1,16 +1,38 @@
 <?php
+require_once "./fn.php";
+
+$user_info=check_login();
 //登陆验证
     // session_start();
     // if(empty($_SESSION["current_user_login_id"])){
     //   header("location: ./login.php");
     //   exit;
     // }
-    session_start();
-    if(empty($_SESSION["current_user_login_id"])){
-      header("location:./login.php");
-      exit;
+    // session_start();
+    // if(empty($_SESSION["current_user_login_id"])){
+    //   header("location:./login.php");
+    //   exit;
 
-    }
+    // }
+
+    // //查询用户的信息
+
+    // $current_user_login_id=$_SESSION["current_user_login_id"];
+    // $user_info=itcast_query("SELECT * FROM users WHERE id=$current_user_login_id")[0];
+
+
+    //获得站点统计信息
+    //文章总数,草稿总数
+    $post_total=itcast_get_single_value("SELECT COUNT(*) FROM posts");
+
+    $post_drafted_total=itcast_get_single_value("SELECT COUNT(*) FROM posts WHERE `status`='drafted'");
+
+    //分类总数
+
+    $category_total=itcast_get_single_value("SELECT COUNT(*) FROM categories");
+    //评论总数,待审核总数
+    $comment_total=itcast_get_single_value("SELECT COUNT(*) FROM comments");
+    $comment_held_total=itcast_get_single_value("SELECT COUNT(*) FROM comments WHERE `status`='held'");
 
 
 ?>
@@ -34,13 +56,13 @@
   <script>NProgress.start()</script>
 
   <div class="main">
-    <nav class="navbar">
-      <button class="btn btn-default navbar-btn fa fa-bars"></button>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="profile.html"><i class="fa fa-user"></i>个人中心</a></li>
-        <li><a href="logout.php"><i class="fa fa-sign-out"></i>退出</a></li>
-      </ul>
-    </nav>
+
+    <!-- 公共部分,导航 -->
+    <?php include_once "./inc/navigator.html"?>
+   
+
+
+
     <div class="container-fluid">
       <div class="jumbotron text-center">
         <h1>One Belt, One Road</h1>
@@ -54,10 +76,20 @@
               <h3 class="panel-title">站点内容统计：</h3>
             </div>
             <ul class="list-group">
-              <li class="list-group-item"><strong>10</strong>篇文章（<strong>2</strong>篇草稿）</li>
-              <li class="list-group-item"><strong>6</strong>个分类</li>
-              <li class="list-group-item"><strong>5</strong>条评论（<strong>1</strong>条待审核）</li>
+
+            <!-- 站点内容统计 -->
+            
+              <li class="list-group-item">
+              <strong><?php echo $post_total; ?></strong>篇文章（
+              <strong><?php echo $post_drafted_total; ?></strong>篇草稿）</li>
+              <li class="list-group-item">
+              <strong><?php echo $category_total; ?></strong>个分类</li>
+              <li class="list-group-item">
+              <strong><?php echo $comment_total; ?></strong>条评论（
+              <strong><?php echo $comment_held_total; ?></strong>条待审核）</li>
             </ul>
+
+
           </div>
         </div>
         <div class="col-md-4"></div>
@@ -66,11 +98,16 @@
     </div>
   </div>
 
-  <div class="aside">
+  <!-- <div class="aside">
+
+
+
     <div class="profile">
-      <img class="avatar" src="../uploads/avatar.jpg">
-      <h3 class="name">布头儿</h3>
+      <img class="avatar" src="<?php echo $user_info["avatar"]; ?>">
+      <h3 class="name"><?php echo $user_info["nickname"]; ?></h3>
     </div>
+
+
     <ul class="nav">
       <li class="active">
         <a href="index.html"><i class="fa fa-dashboard"></i>仪表盘</a>
@@ -102,7 +139,10 @@
         </ul>
       </li>
     </ul>
-  </div>
+  </div> -->
+    <!-- 公共部分: 左侧当行菜单 -->
+    <?php $page_name = "index"; ?>
+    <?php include_once "./inc/aside.html"; ?>
 
   <script src="../assets/vendors/jquery/jquery.js"></script>
   <script src="../assets/vendors/bootstrap/js/bootstrap.js"></script>
