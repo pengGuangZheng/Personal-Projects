@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/swiper/css/swiper.min.css">
+    <script src="./lib/jquery-1.8.3.min.js"></script>
+    <script src="./lib/template-web.js"></script>
+    <script src="./lib/swiper/js/swiper.js"></script>
+
+    <!-- 个人的文件 -->
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./lib/index.js"></script>
+</head>
+<body>
+    <!-- 携程主页的大盒子 -->
+    <div class="container">
+        <!-- 固定的搜索框 -->
+        <div class="search">
+            <input id="searchinput" type="text" placeholder="酒店/景点/航班/目的地" >
+            <a href="">
+                <img src="./imgs/icon.png" alt="">
+                <span>我的</span>
+            </a>
+        </div>
+        <!-- 页面的主体部分 -->
+        <div class="main">
+            <!-- 轮播图 -->
+            <div class="banner">
+                <!-- 实现主体结构 -->
+                <div class="swiper-container">
+                    <!-- 每一屏元素 -->
+                    <div class="swiper-wrapper">
+                        <img class="swiper-slide" src="./imgs/banner01.jpg" alt="">
+                        <img class="swiper-slide" src="./imgs/banner02.jpg" alt="">
+                        <img class="swiper-slide" src="./imgs/banner05.jpg" alt="">
+                    </div>
+                    <!-- 小圆点 -->
+                    <div class="swiper-pagination"></div>
+
+                </div>
+                
+            </div>
+
+            <!-- 顶部导航 -->
+            <div class="topnav">
+                <a href=""><img src="./imgs/nav1.png" alt=""><span class="title">景点.玩乐</span></a>
+                <a href=""><img src="./imgs/nav2.png" alt=""><span class="title">周边游</span></a>
+                <a href=""><img src="./imgs/nav3.png" alt=""><span class="title">美食林</span></a>
+                <a href=""><img src="./imgs/nav4.png" alt=""><span class="title">一日游</span></a>
+                <a href=""><img src="./imgs/nav5.png" alt=""><span class="title">当地攻略</span></a>
+
+
+            </div>
+
+
+            <!-- 业务模块 -->
+            <div class="travel">
+                <!-- 酒店 -->
+                <div class="section1">
+                    <div class="left">
+                        <a href="">酒店</a>
+                    </div>
+                    <div class="right">
+                        <a href="">酒店</a>
+                        <a href="">酒店</a>
+                        <a href="">酒店</a>
+                        <a href="">酒店</a>
+                    </div>
+                </div>
+                <!-- 机场 -->
+                <div class="section2">
+                        <div class="left">
+                            <a href="">机票</a>
+                        </div>
+                        <div class="right">
+                            <a href="">机票</a>
+                            <a href="">机票</a>
+                            <a href="">机票</a>
+                            <a href="">机票</a>
+                        </div>
+                    </div>
+
+                <!-- 旅游 -->
+                <div class="section3">
+                        <div class="left">
+                            <a href="">旅游</a>
+                        </div>
+                        <div class="right">
+                            <a href="">旅游</a>
+                            <a href="">旅游</a>
+                            <a href="">旅游</a>
+                            <a href="">旅游</a>
+                        </div>
+                    </div>
+
+
+            </div>
+
+            <!-- 底部导航 -->
+            <div class="bottomnav">
+                <a href=""><img src="./imgs/subnav1.png" alt=""><span>信用卡</span></a>
+                <a href=""><img src="./imgs/subnav2.png" alt=""><span>信用卡</span></a>
+                <a href=""><img src="./imgs/subnav3.png" alt=""><span>信用卡</span></a>
+                <a href=""><img src="./imgs/subnav4.png" alt=""><span>信用卡</span></a>
+                <a href=""><img src="./imgs/subnav5.png" alt=""><span>信用卡</span></a>
+                <a href=""><img src="./imgs/subnav6.png" alt=""><span>信用卡</span></a>
+                <a href=""><img src="./imgs/subnav7.png" alt=""><span>信用卡</span></a>
+                <a href=""><img src="./imgs/subnav8.png" alt=""><span>信用卡</span></a>
+                <a href=""><img src="./imgs/subnav9.png" alt=""><span>信用卡</span></a>
+                <a href=""><img src="./imgs/subnav10.png" alt=""><span>信用卡</span></a>
+                <a href=""><img src="./imgs/subnav11.png" alt=""><span>信用卡</span></a>
+                <a href=""><img src="./imgs/subnav12.png" alt=""><span>信用卡</span></a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 搜索页的大盒子 -->
+    <div class="searchpage">
+        <div class="search">
+            <button id="back"></button>
+            <input type="text">
+            <button id="searchbutton">搜索</button>
+
+        </div>
+
+        <div class="searchhistory">
+           
+        </div>
+    </div>
+
+    <script id="searchlist" type="text/html">
+     <p>搜索历史</p>
+     <ul class="searchlist">
+         {{each data}}
+        <li>{{$value}}</li>
+         {{/each}}
+        
+        <li class="clear">清空搜索历史</li>
+    </ul>
+    </script>
+    
+</body>
+</html>

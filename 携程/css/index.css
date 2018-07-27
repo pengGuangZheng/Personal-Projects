@@ -1,0 +1,303 @@
+/* 公共样式 */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+
+}
+ul {
+  list-style: none;
+}
+img {
+  display: block;
+}
+
+/* 主页的大盒子 */
+.container {
+  width: 100%;
+  position: absolute;
+  background-color: #ddd;
+    /* display: none; */
+
+}
+
+.container .search {
+  position: fixed;
+  width: 100%;
+  height: 45px;
+  border-bottom:1px solid #ccc ;
+  background: #f6f6f6;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.container .search input {
+  flex: 1;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: -1px 1px 1px #bbb;
+
+  outline: none;
+  background: url('../imgs/glass.png') 5px 5px/25px auto no-repeat;
+  padding-left: 35px;
+}
+
+.container .search a {
+  flex-basis: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .search a img{
+  width: 25px;
+}
+.container .search a  span{
+  font-size: 12px;
+  color: #099fde;
+}
+
+
+/* main */
+.container .main{
+  width: 100%;
+  margin-top: 45px;
+  padding: 0px 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.container .main .banner{
+  /* 抵消父盒子的padding:5px */
+  margin: 0 -5px;
+}
+
+/* 定制小圆点的位置 */
+.container .main .banner .swiper-container .swiper-pagination{
+  text-align: right;
+  margin-bottom: -10px;
+  padding-right: 10px;
+}
+
+/* 改变小圆点大小 */
+.swiper-container  .swiper-pagination  .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+
+}
+/* 给当前小圆点设置高亮 */
+.swiper-container  .swiper-pagination  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 12px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+
+/* 主体部分顶部导航 */
+.main .topnav{
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  margin: 5px 0;
+  border-radius: 5px;
+  height: 82px;
+
+}
+.main .topnav a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+.main .topnav a img{
+  height: 45px;
+  /* 图片宽度自适应手机屏幕 */
+  width: 70%;
+}
+.main .topnav a span {
+  font-size: 14px;
+  color: #999;
+}
+
+
+/* 业务模块部分 */
+.container .main .travel{
+  background-color: #fff;
+
+}
+
+.container .main .travel .section1{
+  background: linear-gradient(to right,#FF4F46,#FF9144);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.container .main .travel .section2{
+  background: linear-gradient(to right,#14C69F,#24D85F);
+  margin:5px 0;
+}
+
+
+.container .main .travel .section3{
+  background: linear-gradient(to right,#1A90EB,#0ABFEC);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+.container .main .travel>div{
+  height:100px ;
+  display: flex;
+}
+
+/* 业务模块的左边 */
+.container .main .travel>div .left{
+  flex: 1;
+  border-right: 1px solid #fff;
+  text-align: center;
+  padding-top:20px;
+}
+
+.container .main .travel>div .left a{
+ 
+  color: #fff;
+
+}
+.container .main .travel .section1 .left{
+  background: url('../imgs/item1.png') no-repeat center bottom/100% auto;
+}
+
+.container .main .travel .section2 .left{
+  background: url('../imgs/item2.png') no-repeat center bottom/100% auto;
+}
+.container .main .travel .section3 .left{
+  background: url('../imgs/item3.png') no-repeat center bottom/100% auto;
+}
+
+
+/* 业务模块的右边 */
+.container .main .travel>div .right{
+  display: flex;
+  flex: 2;
+  flex-wrap: wrap;
+}
+
+.container .main .travel>div .right a{ 
+  
+  color: #fff;
+  width: 50%;
+  text-align: center;
+  line-height:50px ;
+  
+  
+
+}
+.travel .right a:nth-child(1),.travel .right a:nth-child(2){
+  border-bottom: 1px solid #fff;
+}
+.travel .right a:nth-child(1),.travel .right a:nth-child(3){
+  border-right: 1px solid #fff;
+
+}
+
+
+/* 底部导航 */
+
+.container .main .bottomnav{
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  margin-top: 5px;
+  border-radius: 5px;
+  padding: 10px 0;
+  
+}
+.container .main .bottomnav a{
+  width:16.6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 5px 0;
+}
+
+.container .main .bottomnav a span{
+  font-size: 14px;
+  color: #666;
+}
+
+
+/* 搜索页 */
+
+.searchpage{
+  display: none;
+
+}
+.searchpage .search {
+  height: 45px;
+  background-color: #E6F0F6;
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+
+  display: flex;
+  align-items: center;
+}
+
+.searchpage .search button{
+  flex-basis: 50px;
+  background-color:transparent;
+  border: none;
+}
+.searchpage .search #back{
+  height: 25px;
+  background: url('../imgs/back.png') no-repeat 5px 0px/23px ;
+  
+}
+.searchpage .search input{
+  flex: 1;
+  outline: none;
+  height: 30px;
+  border-radius: 5px;
+  line-height: 30px;
+  box-shadow: -1px 1px 1px #ccc;
+  border: 1px solid #ccc;
+  padding-left: 35px;
+
+  /* 利用渐变生成背景图片,多背景实现,先加的永远在上面 */
+ background: url("../imgs/glass.png") 5px 3px/25px auto no-repeat,
+ linear-gradient(to right,#fff,#fff);
+
+
+} 
+
+.searchhistory{
+  /* display: none; */
+}
+
+.searchpage .searchhistory p{
+  height: 35px;
+  color: #666;
+  line-height: 35px;
+  padding-left: 20px;
+}
+.searchpage .searchhistory ul{
+  background-color: #fff;
+}
+.searchpage .searchhistory ul li{
+  border-top:1px solid #ccc;
+  height: 35px;
+  line-height: 35px;
+  padding-left: 30px;
+}
+.searchpage .searchhistory ul .clear{
+  color: #099fde;
+  text-align: center;
+  padding: 0;
+  
+}
